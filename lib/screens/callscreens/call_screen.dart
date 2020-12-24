@@ -10,7 +10,7 @@ import 'package:skype_clone/models/call.dart';
 import 'package:skype_clone/provider/user_provider.dart';
 import 'package:skype_clone/resources/call_methods.dart';
 
-import '../home_screen.dart';
+// import '../home_screen.dart';
 
 class CallScreen extends StatefulWidget {
   final Call call;
@@ -60,6 +60,8 @@ class _CallScreenState extends State<CallScreen> {
   }
 
   addPostFrameCallback() {
+    print(
+        "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo on line 63");
     SchedulerBinding.instance.addPostFrameCallback((_) {
       userProvider = Provider.of<UserProvider>(context, listen: false);
 
@@ -147,6 +149,8 @@ class _CallScreenState extends State<CallScreen> {
       setState(() {
         _infoStrings.add('onLeaveChannel');
         _users.clear();
+        print(
+            "---------------------------------------------------------------------------------------------------------This is on line 152 of call_screen.dart");
       });
     };
 
@@ -165,6 +169,10 @@ class _CallScreenState extends State<CallScreen> {
         _infoStrings.add(info);
         _users.remove(uid);
       });
+
+      print(
+          "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& on line 173 of call_screen.dart");
+      Navigator.pop(context);
     };
 
     AgoraRtcEngine.onFirstRemoteVideoFrame = (
@@ -176,6 +184,8 @@ class _CallScreenState extends State<CallScreen> {
       setState(() {
         final info = 'firstRemoteVideo: $uid ${width}x $height';
         _infoStrings.add(info);
+        print(
+            "****************************************************************************** on line 183 of call_screen.dart");
       });
     };
   }
@@ -243,7 +253,7 @@ class _CallScreenState extends State<CallScreen> {
   }
 
   /// Info panel to show logs
-  Widget _panel() {
+  Widget panel() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 48),
       alignment: Alignment.bottomCenter,
@@ -328,11 +338,7 @@ class _CallScreenState extends State<CallScreen> {
               callMethods.endCall(
                 call: widget.call,
               );
-              // Navigator.push(context, MaterialPageRoute(builder: (context){return HomeScreen();});
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) {
-                return HomeScreen();
-              }));
+              Navigator.pop(context);
             },
             child: Icon(
               Icons.call_end,

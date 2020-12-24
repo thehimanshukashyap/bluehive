@@ -442,6 +442,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void pickImage({@required ImageSource source}) async {
     File selectedImage = await Utils.pickImage(source: source);
+    print(
+        "\n\n\n\n\n 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333This is on line 445 of chat_screen.dart and here is the value of selectedImage\n\n\n\n\n");
+    print(selectedImage);
+    print("\n\n\n\n");
     _storageMethods.uploadImage(
         image: selectedImage,
         receiverId: widget.receiver.uid,

@@ -19,8 +19,8 @@ class AuthMethods {
 
   Future<User> getCurrentUser() async {
     User currentUser;
-    currentUser = await _auth.currentUser;
-    // currentUser = _auth.currentUser;
+    // currentUser = await _auth.currentUser;
+    currentUser = _auth.currentUser;
     return currentUser;
   }
 

@@ -6,7 +6,6 @@ import 'package:skype_clone/resources/call_methods.dart';
 import 'package:skype_clone/resources/local_db/repository/log_repository.dart';
 import 'package:skype_clone/screens/callscreens/call_screen.dart';
 import 'package:skype_clone/screens/chatscreens/widgets/cached_image.dart';
-import 'package:skype_clone/screens/home_screen.dart';
 import 'package:skype_clone/utils/permissions.dart';
 
 class PickupScreen extends StatefulWidget {
@@ -88,10 +87,6 @@ class _PickupScreenState extends State<PickupScreen> {
                     isCallMissed = false;
                     addToLocalStorage(callStatus: CALL_STATUS_MISSED);
                     await callMethods.endCall(call: widget.call);
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) {
-                    //   return HomeScreen();
-                    // }));
                     Navigator.pop(context);
                   },
                 ),

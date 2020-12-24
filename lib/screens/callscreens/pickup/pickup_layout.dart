@@ -18,6 +18,7 @@ class PickupLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Widget build(BuildContext context) {
     final UserProvider userProvider = Provider.of<UserProvider>(context);
     // Call callData = new Call();
 
@@ -42,5 +43,6 @@ class PickupLayout extends StatelessWidget {
         ),
       );
     }
+    return scaffold;
   }
 }

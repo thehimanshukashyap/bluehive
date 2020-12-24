@@ -1,10 +1,12 @@
 import 'dart:io';
+import 'dart:math';
 // import 'dart:math';
 import 'package:flutter/material.dart';
 // import 'package:image/image.dart' as Im;
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
+import 'package:path_provider/path_provider.dart';
 // import 'package:path_provider/path_provider.dart';
 import 'package:skype_clone/enum/user_state.dart';
 
@@ -24,21 +26,24 @@ class Utils {
 
   static Future<File> pickImage({@required ImageSource source}) async {
     ImagePicker imagePicker = new ImagePicker();
-    // PickedFile selectedImage = await imagePicker.getImage(source: source);
     PickedFile selectedImage = await imagePicker.getImage(source: source);
-    return await compressImage(selectedImage);
+    return compressImage(selectedImage);
   }
 
   static Future<File> compressImage(PickedFile imageToCompress) async {
     // final tempDir = await getTemporaryDirectory();
     // final path = tempDir.path;
-    // int rand = Random().nextInt(10000);
+    int rand = Random().nextInt(10000);
 
     // Im.Image image = Im.decodeImage(imageToCompress.readAsBytesSync());
     // Im.copyResize(image, width: 500, height: 500);
-
-    // return new File('$path/img_$rand.jpg')
-    //   ..writeAsBytesSync(Im.encodeJpg(image, quality: 85));
+    print(
+        "================================================================================= this is on line 44 of utitlities.dart");
+    print('img_$rand.jpg');
+    return new File('img_$rand.jpg');
+    // print('$path/img_$rand.jpg');
+    // return new File('$path/img_$rand.jpg');
+    // ..writeAsBytesSync(Im.encodeJpg(image, quality: 85));
   }
 
   static int stateToNum(UserState userState) {
@@ -73,3 +78,5 @@ class Utils {
     return formatter.format(dateTime);
   }
 }
+
+// class Im {}

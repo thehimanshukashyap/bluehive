@@ -22,8 +22,6 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   UserProvider userProvider;
 
   final AuthMethods _authMethods = AuthMethods();
-  // final LogRepository _logRepository = LogRepository(isHive: true);
-  // final LogRepository _logRepository = LogRepository(isHive: false);
 
   @override
   void initState() {

@@ -60,8 +60,6 @@ class _CallScreenState extends State<CallScreen> {
   }
 
   addPostFrameCallback() {
-    print(
-        "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo on line 63");
     SchedulerBinding.instance.addPostFrameCallback((_) {
       userProvider = Provider.of<UserProvider>(context, listen: false);
 
@@ -149,8 +147,6 @@ class _CallScreenState extends State<CallScreen> {
       setState(() {
         _infoStrings.add('onLeaveChannel');
         _users.clear();
-        print(
-            "---------------------------------------------------------------------------------------------------------This is on line 152 of call_screen.dart");
       });
     };
 
@@ -169,9 +165,6 @@ class _CallScreenState extends State<CallScreen> {
         _infoStrings.add(info);
         _users.remove(uid);
       });
-
-      print(
-          "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& on line 173 of call_screen.dart");
       Navigator.pop(context);
     };
 
@@ -184,9 +177,6 @@ class _CallScreenState extends State<CallScreen> {
       setState(() {
         final info = 'firstRemoteVideo: $uid ${width}x $height';
         _infoStrings.add(info);
-        print(
-            "****************************************************************************** on line 183 of call_screen.dart");
-      });
     };
   }
 
